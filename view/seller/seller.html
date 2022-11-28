@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Seller</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-letf">
+                <ul>
+                    <a href="../../sellWebsite.html"><img src="../../img/logo.png" width="300px"></a>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="../customer/customer.html">Customer</a></li>
+                    <li><a class="active" href="seller.html">Seller</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <div class = "sell">
+            <div class="sign-in">
+                <h1>Become an seller</h1>
+                <button class="sing-in" onclick="clickOnSignIn()">Sing In</button>
+                <p>$55 a month + slling fees</p>
+            </div>
+            <div class="photo-sell">
+                <img src="../../img/seller.png" alt="" width="600px">
+            </div>
+        </div> -->
+        <table>
+            <tr>
+              <th>UID</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+            <tr>
+              <td id="id">1</td>
+              <td id="name">Maria Anders</td>
+              <td id="description">Germany</td>
+              <td id="price">Germany</td>
+              <td id="actions">
+                <i class="fa fa-trash"></i>
+                <i class="fa fa-pencil"></i>
+              </td>
+            </tr>
+            <tr>
+              <td id="id">2</td>
+              <td id="name">Francisco Chang</td>
+              <td id="description">Mexico</td>
+              <td id="price">Mexico</td>
+              <td id="actions">
+                <i class="fa fa-trash"></i>
+                <i class="fa fa-pencil"></i>
+              </td>
+            </tr> 
+            <tr>
+              <td id="id">3</td>
+              <td id="name">Yoshi Tannamuri</td>
+              <td id="description">Canada</td>
+              <td id="price">Canada</td>
+              <td id="actions">
+                <i class="fa fa-trash"></i>
+                <i class="fa fa-pencil"></i>
+              </td>
+            </tr>
+            <tr >
+              <td id="id">4</td>
+              <td id="name">Giovanni Rovelli</td>
+              <td id="description">Italy</td>
+              <td id="price">Italy</td>
+              <td id="actions">
+                <i class = "fa fa-trash" id="trash"></i>
+                <i class = "fa fa-pencil" id="pencil"></i>
+              </td>
+            </tr>
+        </table>
+        <div class="sign-in">
+                <button class="sing-in" onclick="clickOnSignIn()">Creat </button>
+        </div>
+            <!-- <div class="photo-sell">
+                <img src="../../img/seller.png" alt="" width="600px">
+            </div> -->
+        </div>
+        <div id = "form-dialog" style="display: none" >
+            <dialog open>
+                <h3>LOGIN TO YOUR ACCOUNT</h3>
+                <section>
+                    <div class = "input-form">
+                        <label for = "username">Name</label>
+                        <input type = "text" id="username">
+
+                        <label for = "description">Description</label>
+                        <input type = "text" id="description">
+
+                        <label for = "number">Price</label>
+                        <input type = "number" id="number">
+
+                        <label for = "currency">currency</label>
+                        <input type = "number" id="currency">
+
+                    </di>
+                </section>
+                <menu>
+                    <button class="log-in" onclick="onCreate()">Save</button>
+                </menu>
+            </dialog>
+        </div>
+    </div>
+    <script src="seller.js"></script>
+</body>
+</html>

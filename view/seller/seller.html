@@ -30,89 +30,56 @@
                 <p>$55 a month + slling fees</p>
             </div>
             <div class="photo-sell">
-                <img src="../../img/seller.png" alt="" width="600px">
+                <img src="../../img/seller.png" alt="description" width="600px">
             </div>
         </div> -->
-        <table>
-            <tr>
-              <th>UID</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Actions</th>
-            </tr>
-            <tr>
-              <td id="id">1</td>
-              <td id="name">Maria Anders</td>
-              <td id="description">Germany</td>
-              <td id="price">Germany</td>
-              <td id="actions">
-                <i class="fa fa-trash"></i>
-                <i class="fa fa-pencil"></i>
-              </td>
-            </tr>
-            <tr>
-              <td id="id">2</td>
-              <td id="name">Francisco Chang</td>
-              <td id="description">Mexico</td>
-              <td id="price">Mexico</td>
-              <td id="actions">
-                <i class="fa fa-trash"></i>
-                <i class="fa fa-pencil"></i>
-              </td>
-            </tr> 
-            <tr>
-              <td id="id">3</td>
-              <td id="name">Yoshi Tannamuri</td>
-              <td id="description">Canada</td>
-              <td id="price">Canada</td>
-              <td id="actions">
-                <i class="fa fa-trash"></i>
-                <i class="fa fa-pencil"></i>
-              </td>
-            </tr>
-            <tr >
-              <td id="id">4</td>
-              <td id="name">Giovanni Rovelli</td>
-              <td id="description">Italy</td>
-              <td id="price">Italy</td>
-              <td id="actions">
-                <i class = "fa fa-trash" id="trash"></i>
-                <i class = "fa fa-pencil" id="pencil"></i>
-              </td>
-            </tr>
+        <button class="creatBtn" onclick="clickOnCreatBtn()">Creat </button>
+        <table id="my-table">     
+            <thead class="header">
+                <th id="header-id">UID</th>
+                    <th id="header-name"> Name</th>
+                    <th id="header-des"> Description</th>
+                    <th id="header-price">Price</th>
+                    <th id="header-action">action</th>
+            </thead>
+            <tbody id="body-table">
+                <!-- <tr >
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+            </tbody>
         </table>
-        <div class="sign-in">
-                <button class="sing-in" onclick="clickOnSignIn()">Creat </button>
-        </div>
+         <!-- -->
             <!-- <div class="photo-sell">
-                <img src="../../img/seller.png" alt="" width="600px">
+                <img src="../../img/seller.png" alt="description" width="600px">
             </div> -->
         </div>
         <div id = "form-dialog" style="display: none" >
             <dialog open>
-                <h3>LOGIN TO YOUR ACCOUNT</h3>
+                <header>Create new question</header>
                 <section>
                     <div class = "input-form">
-                        <label for = "username">Name</label>
-                        <input type = "text" id="username">
+                        <label for = "id">Name</label>
+                        <input type = "text" id="id">
 
-                        <label for = "description">Description</label>
-                        <input type = "text" id="description">
+                        <label for = "name-product">Description</label>
+                        <input type = "text" id="name-product">
 
-                        <label for = "number">Price</label>
-                        <input type = "number" id="number">
+                        <label for = "descriptions">Price</label>
+                        <input type = "number" id="descriptions">
 
-                        <label for = "currency">currency</label>
-                        <input type = "number" id="currency">
-
+                        <label for = "prices">currency</label>
+                        <input type = "number" id="prices">
                     </di>
                 </section>
                 <menu>
-                    <button class="log-in" onclick="onCreate()">Save</button>
+                    <button onclick="onCancel()">Cancel</button>
+                    <button id="createEditButton" onclick="onCreate()">Save</button>
                 </menu>
             </dialog>
         </div>
+
     </div>
     <script src="seller.js"></script>
 </body>

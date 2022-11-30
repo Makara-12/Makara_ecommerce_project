@@ -41,41 +41,66 @@ nav{
     font-size: 25px;
 }
 /* sell style */
+.title{
+    text-align: center;
+    margin-top: 50px;
+}
 #my-table{
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 80%;
-    /* margin-top: 50px;
-    margin-left: 100px; */
-    margin: auto;
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 50px;
+    /* margin: auto; */
 }
-thead, #body-table{
-    background-color: pink;
-}
+
 th, td{
-    width: 100%;
     border: 1px solid black;
     text-align: center;
-}
-/* #tr-container, #idu, #name, #description, #price{
-    width: 500%;
-    border: 1px solid #151414;
-    padding: 20px;
-}
-tr:nth-child(1) {
-    background-color: #d8bdbd;
-} */
+    padding: 10px;
 
+}
+#description{ 
+     width: 30px; 
+} 
 
+thead tr th{
+    background-color: #02393a;
+    color: white;
+    padding: 40px;
+}
+
+#img-product, img{
+    width: 150px;
+    margin-right: 10px;
+}
+
+#btn1{
+    background: blue;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+#btn2{
+    background-color: red;
+    color: white;
+    margin-left: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+}
 .creatBtn{
-    margin-top: 10px;
-    margin-left: 8%;
+    margin-top: 30px;
+    margin-left: 4%;
     padding: 5px;
     font-size: 20px;
     width: 10%;
     border: none;
     border-radius: 5px;
-    background-color: rgb(206, 151, 177);
+    background-color: rgb(5, 90, 83);
+    color: white;
 }
 
 dialog {
@@ -109,10 +134,7 @@ h3{
     text-align: center;
     text-decoration: underline;
 }
-#idu{
-    background: blue;
-    width: 100%;
-}
+
 input[type=text], input[type = number], 
  select{
     padding: 7px;
@@ -176,19 +198,7 @@ main form button {
     border-left: none;
     cursor: pointer;
 }
-/* #btn1{
-    background: rgb(225, 221, 221);
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-}
-#btn2{
-    background-color: #42535a;
-    margin-left: 20px;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-} */
+
 .text-job p {
     font-size: 50px;
     text-align: center;

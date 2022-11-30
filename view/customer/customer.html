@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
     <title>Customer</title>
 </head>
 <body>
@@ -27,239 +26,24 @@
         <main>
             <div class="search">
                 <form class="example" action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
+                    <input type="text" onkeyup = "searchProduct()" placeholder="Search.."  id = "search">
                     <button type="submit"> <i class="fa fa-search"></i></button>
                 </form>
             </div>
             <div class="text-job">
                 <p>LISH OF PRODUCT</p>
             </div> 
-            <div class="photo-find-job">
-                <div class="card">
-                    <div class="photo-text">
-                        <img src="../../img/dress1.jfif" alt="" >
-                        <p>Accounting</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        
-                    </div>
-                    <div class="photo-text">
-                        <img src="../../img/dress2.jfif" alt="" >
-                        <p>actress</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                       
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="photo-text">
-                        <img src="../../img/dress3.webp" alt="" >
-                        <p>Doctor</p>
-                    </div>
-                    <div class="photo-text">
-                        <img src="../../img/dress4.jpg" alt="" >
-                        <p>teacher</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="photo-find-job">
-                <div class="card">
-                    <div class="photo-text">
-                        <img src="../../img/dress5.jfif" alt="" >
-                        <p>police</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="photo-text">
-                        <img src="../../img/dress6.jfif" alt="" >
-                        <p>law</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="photo-text">
-                        <img src="../../img/dress7.jfif" alt="" >
-                        <p>IT</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="photo-text">
-                        <img src="../../img/dress8.jpg" alt="" >
-                        <p>seller</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="photo-find-job">
-                <div class="card">
-                    <div class="photo-text">
-                        <img src="../../img/dress9.jpg" alt="" >
-                        <p>Cleaners</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="photo-text">
-                        <img src="../../img/dress10.jpg" alt="" >
-                        <p>Agriculture</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="photo-text">
-                        <img src="../../img/dress11.jpg" alt="" >
-                        <p>Secretary</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="photo-text">
-                        <img src="../../img/dress12.webp" alt="" >
-                        <p>Doctor</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="photo-find-job">
-                <div class="card">
-                    <div class="photo-text">
-                        <img src="../../img/dress13.jfif" alt="" >
-                        <p>law</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="photo-text">
-                        <img src="../../img/dress14.jfif" alt="" >
-                        <p>police</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                     <div class="photo-text">
-                        <img src="../../img/dress18.jfif" alt="" >
-                        <p>Accounting</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="photo-text">
-                        <img src="../../img/dress17.jpg" alt="" >
-                        <p>IT</p>
-                        <div class="price">
-                            <p>20$</p>
-                        </div>
-                        <div class="star">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div> -->
-                </div>
-            </div> -->
         </main>
+        <div class="list-product">
+            <!-- <div class="card-product">
+                <div class = "img-product">
+                    <img id="product-photo" src="../../img/dress1.jfif" alt="" >
+                </div>
+                <p id="description">Accounting</p>
+                <p id="price">20$</p>
+                <button class="btn-buy">buy now</button>
+            </div> -->
+        </div> 
     </div>
     <script src="customer.js"></script>
 </body>

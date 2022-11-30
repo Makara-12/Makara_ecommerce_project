@@ -5,6 +5,7 @@ body{
     display: flex;
     justify-content: space-between;
     font-family: sans-serif;
+    color: rgb(0, 0, 0);
 }
 .container{
     width: 100%;
@@ -70,7 +71,7 @@ thead tr th{
     padding: 40px;
 }
 
-#img-product, img{
+img, #cloth{
     width: 150px;
     margin-right: 10px;
 }
@@ -91,6 +92,7 @@ thead tr th{
     border: none;
     border-radius: 5px;
 }
+
 .creatBtn{
     margin-top: 30px;
     margin-left: 4%;
@@ -102,7 +104,7 @@ thead tr th{
     background-color: rgb(5, 90, 83);
     color: white;
 }
-
+/* dialog */
 dialog {
     position: fixed;
     top: 18vh;
@@ -126,8 +128,6 @@ dialog menu {
     display: flex;
     justify-content: flex-end;
     border: none;
-    
-    /* margin: 100px; */
 }
 
 h3{
@@ -158,14 +158,12 @@ input[type=text], input[type = number],
     text-decoration: underline;
 }
 
-.photo-sell{
-    margin-top: 20px;
-}
+
 
 main {
     display: flex;
     flex-direction: column;
-  }
+}
 main .search {
     width: 100%;
     background-image: url(../photoes/backround-bt.jpg);
@@ -174,6 +172,7 @@ main .search {
 main form {
     height: 50vh;
     margin: auto;
+    margin-top: -50px;
     width: 60%;
     display: flex;
     align-items: center;
@@ -201,48 +200,47 @@ main form button {
 
 .text-job p {
     font-size: 50px;
+    margin-top: -50px;
     text-align: center;
 }
-  
-.photo-find-job {
-    /* border-radius: 10px; */
-    display: flex;
-    justify-content: space-evenly;
-}
-  
-.card {
-    width: 50%;
-    display: flex;
-    justify-content: space-evenly;
-}
-  
-.card img {
-    width: 280px;
-}
-  
-.photo-text {
-    height: 70vh;
-    background: rgb(245, 242, 242);
-    font-weight: bold;
-    border-radius: 10px;
-    flex-direction: column;
-    align-items: center;
-    margin: 25px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-  
-.photo-text img {
 
-    height: 40vh;
-    /* border-radius: 10px; */
+.star i{ 
+    color: orangered; 
+ } 
+
+
+.list-product{
+    display: flex;
+    flex-wrap: wrap;
+    width: 97%; 
+    margin: 20px;
+    /* justify-content: space-around; */
+}
+.card-product{
+
+
+    background: rgb(191, 201, 199);
+    margin: 17px;
+    width: 22%;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; 
+}
+.img-product img{
+  
+    height: 40vh; 
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100%;
+
 }
 
-.star i{
-    color: orangered;
+.btn-buy{
+
+    background: rgb(234, 233, 233);
+    border-radius: 20px;
+    width: 90px; 
+    margin-right: 10px;
+    border: none;
+    padding: 10px; 
 }
-
-  /* # sourceMappingURL=homestyle.css.map */
-
-

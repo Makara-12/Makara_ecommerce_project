@@ -12,7 +12,7 @@ let dom_btn_save_create = document.querySelector('#createEditButton');
 // console.log(dom_price)
 
 
-// let dataTables = [
+// let listProducts = [
 //     {
 //         name: "giovanni",
 //         description: "red",
@@ -36,8 +36,6 @@ let dom_btn_save_create = document.querySelector('#createEditButton');
 
 //     },
 // ];
-// let indexRuning = 0;
-// let questionToEdit = null;
 
 // show and hide element
 function show(element){
@@ -50,33 +48,30 @@ function hide(element){
 
 //  LOCAL STORAGE ---------------------------------------------------------
 function saveProducts() { 
-        localStorage.setItem("dataTables", JSON.stringify(dataTables));
+        localStorage.setItem("listProducts", JSON.stringify(listProducts));
 }
 
 function loadProducts() {
-    let dataTablesStorage = JSON.parse(localStorage.getItem("dataTables"));
-    if (dataTablesStorage !== null) {
-        dataTables = dataTablesStorage;
+    let listProductStorage = JSON.parse(localStorage.getItem("listProducts"));
+    if (listProductStorage !== null) {
+        listProducts = listProductStorage;
     }
 };
 
 // loop table
-function creatTable(){
-    loadProducts()
-    saveProducts()
+function createProduct(){
+        loadProducts()
+        saveProducts()
 
-    // if (dom_photo_product.value === '' || dom_product_name.value === '' || dom_description.value === '' || dom_price.value === ''){
-    //     // confirm('need to input all')
-    // }else{
         document.querySelector('#body-table').remove();
         dom_tables = document.createElement("tbody");
         dom_tables.id = "body-table";
         table.appendChild(dom_tables);
-
-        for(let index = 0; index < dataTables.length; index++){
-    
-            let dataTable = dataTables[index];
-    
+        
+        for(let index = 0; index < listProducts.length; index++){
+            
+            let listProduct = listProducts[index];
+            
             let td1 = document.createElement('td');
             td1.id = 'idu';
     
@@ -85,31 +80,27 @@ function creatTable(){
           
             let td2 = document.createElement('td');
             td2.id = 'name';
-            // tr.className = "tr-table";
-            td2.textContent = dataTable.name;
+            td2.textContent = listProduct.name;
            
     
             let td3 = document.createElement('td');
             td3.id = 'description';
-            // tr.className = "tr-table";
-            td3.textContent = dataTable.description;
+            td3.textContent = listProduct.description;
     
             let td4 = document.createElement('td');
             td4.id = 'price';
-            // tr.className = "tr-table";
-            td4.textContent = dataTable.price;
+
+            td4.textContent = listProduct.price +"$";
     
             td5 = document.createElement('td');
             td5.id = 'actions';
-            // tr.className = "tr-table";
     
             td6 = document.createElement('td');
             td6.id = 'img-product';
-            // tr.className = "tr-table";
-    
+
             let img = document.createElement('img')
             img.id = "cloth"
-            img.src = dataTable.img;
+            img.src = listProduct.img;
             td6.appendChild(img)
            
     
@@ -125,23 +116,22 @@ function creatTable(){
     
             td5.appendChild(btn1);
             td5.appendChild(btn2);
-    
+            
             let tr = document.createElement('tr');
             tr.id = index;
             tr.className = "tr-table";
     
             tr.appendChild(td1);
+            tr.appendChild(td6);
             tr.appendChild(td2);
             tr.appendChild(td3);
             tr.appendChild(td4);
             tr.appendChild(td5);
-            tr.appendChild(td6);
         
             dom_tables.appendChild(tr);
         };
-    // }
 };
-creatTable();
+createProduct();
 
 // edite table
 function editdDataTale(event) {
@@ -149,13 +139,12 @@ function editdDataTale(event) {
     //  Get the question index
     productIndex = event.target.parentElement.parentElement.children[0].getAttribute('index');
     productIndex = parseInt(productIndex)
-    let getIndexQuestion = dataTables[productIndex];
 
-    document.getElementById("photo-product").value = getIndexQuestion.img;
-    console.log( document.getElementById("photo-product").value = getIndexQuestion.img)
-    document.getElementById("product-name").value = getIndexQuestion.name
-    document.getElementById("descriptions").value = getIndexQuestion.description;
-    document.getElementById("prices").value = getIndexQuestion.price;
+    let getIndexProduct = listProducts[productIndex];
+    document.getElementById("photo-product").value = getIndexProduct.img;
+    document.getElementById("product-name").value = getIndexProduct.name
+    document.getElementById("descriptions").value = getIndexProduct.description;
+    document.getElementById("prices").value = getIndexProduct.price;
  
     // Show the dialog
     dom_btn_save_create.textContent = "EDIT";
@@ -167,15 +156,15 @@ function removeTable(event) {
     let index = event.target.parentElement.parentElement.children[0].getAttribute('index');
 
     // Remove question
-    dataTables.splice(index, 1);
+    listProducts.splice(index, 1);
 
     // Save to local storage
     saveProducts();
     // Update the view
-    creatTable();
+    createProduct();
 };
 
-// addQuestion
+
 // click create
 function addBtn(){
     show(demo_diload);
@@ -192,27 +181,34 @@ function onCancel(e) {
 // creat table
 function onCreate() {
     hide(demo_diload);
-    // hide(dom_questions_dialog);
-
     if (productIndex !== null){
-        let editProduct = dataTables[productIndex];
+        let editProduct = listProducts[productIndex];;
+
         editProduct.img = document.getElementById("photo-product").value;
         editProduct.name = document.getElementById('product-name').value;
         editProduct.description = document.getElementById('descriptions').value;
         editProduct.price = document.getElementById('prices').value;
     }else{
-        let newQuestion = {};
-        newQuestion.img = document.getElementById("photo-product").value;
-        newQuestion.name = document.getElementById('product-name').value;
-        newQuestion.description = document.getElementById('descriptions').value;
-        newQuestion.price = document.getElementById('prices').value;
-        dataTables.push(newQuestion);
-      }
+        let newProduct = {};
+        newProduct.img = document.getElementById("photo-product").value;
+        newProduct.name = document.getElementById('product-name').value;
+        newProduct.description = document.getElementById('descriptions').value;
+        newProduct.price = document.getElementById('prices').value;
+        if(newProduct.img == "" ||  newProduct.name == "" || newProduct.description == "" || newProduct.price == ""){
+            confirm('you must be input all in put')
+        }else{
+            listProducts.push(newProduct);
+        }
 
+
+
+        // console.log(newProduct.name)
+    }
+    // if(newProduct.value)
     // 2- Save question
     saveProducts();
     // 3 - Update the view
-    creatTable();
+    createProduct();
 };
 
 // clear product
@@ -225,4 +221,4 @@ function clearProduct(){
 
 saveProducts();
 loadProducts();
-creatTable();
+createProduct();

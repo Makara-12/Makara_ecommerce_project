@@ -11,7 +11,7 @@ let dom_btn_save_create = document.querySelector('#createEditButton');
 // let dom_price = document.getElementById('prices');
 // console.log(dom_price)
 
-
+let listProducts = []
 // let listProducts = [
 //     {
 //         name: "giovanni",
@@ -58,55 +58,55 @@ function loadProducts() {
     }
 };
 
-// loop table
+// loop create product
 function createProduct(){
+        // save date and get data from local storage
         loadProducts()
         saveProducts()
-
+        // remove tbody
         document.querySelector('#body-table').remove();
+        // create tbody and id body-table
         dom_tables = document.createElement("tbody");
         dom_tables.id = "body-table";
+    
         table.appendChild(dom_tables);
         
         for(let index = 0; index < listProducts.length; index++){
             
             let listProduct = listProducts[index];
-            
+            // create td class idu
             let td1 = document.createElement('td');
             td1.id = 'idu';
-    
-            td1.textContent = index+1;
-            td1.setAttribute("index",index)
-          
+            td1.textContent = index + 1;
+            td1.setAttribute("index", index)
+            // create td id name product
             let td2 = document.createElement('td');
             td2.id = 'name';
             td2.textContent = listProduct.name;
-           
-    
+            // create td id description
             let td3 = document.createElement('td');
             td3.id = 'description';
             td3.textContent = listProduct.description;
-    
+             // create td class price
             let td4 = document.createElement('td');
-            td4.id = 'price';
-
-            td4.textContent = listProduct.price +"$";
-    
+            td4.id = 'actions';
+            td4.textContent = listProduct.price + "$";
+            // create td id price
             td5 = document.createElement('td');
             td5.id = 'actions';
-    
+            // create td id img-product
             td6 = document.createElement('td');
             td6.id = 'img-product';
-
+            // create td id cloth
             let img = document.createElement('img')
             img.id = "cloth"
             img.src = listProduct.img;
             td6.appendChild(img)
            
-    
+         // create button delet and button edite 
             let btn1 = document.createElement("button");
             btn1.setAttribute("id","btn1");
-            btn1.addEventListener('click', editdDataTale);
+            btn1.addEventListener('click', editeProduct);
             btn1.textContent = 'Edit';
     
             let btn2 = document.createElement("button");
@@ -120,21 +120,20 @@ function createProduct(){
             let tr = document.createElement('tr');
             tr.id = index;
             tr.className = "tr-table";
-    
+            // appenChild td to tr 
             tr.appendChild(td1);
             tr.appendChild(td6);
             tr.appendChild(td2);
             tr.appendChild(td3);
             tr.appendChild(td4);
             tr.appendChild(td5);
-        
+            // appenChild tr to tbody
             dom_tables.appendChild(tr);
         };
 };
-createProduct();
 
 // edite table
-function editdDataTale(event) {
+function editeProduct(event) {
     show(demo_diload);
     //  Get the question index
     productIndex = event.target.parentElement.parentElement.children[0].getAttribute('index');
@@ -155,7 +154,7 @@ function removeTable(event) {
     //  Get index
     let index = event.target.parentElement.parentElement.children[0].getAttribute('index');
 
-    // Remove question
+    // Remove product
     listProducts.splice(index, 1);
 
     // Save to local storage
@@ -167,23 +166,25 @@ function removeTable(event) {
 
 // click create
 function addBtn(){
+    // show diload
     show(demo_diload);
+    // clear data
     clearProduct();
     productIndex = null;
     dom_btn_save_create.textContent = "Save";
 };
 
 function onCancel(e) {
-    // TODO : when clicking on ADD button, hide the dialog
+    //   clicking on ADD button, hide the dialog
     hide(demo_diload);
 };
 
-// creat table
+// creat product
 function onCreate() {
     hide(demo_diload);
+    // dedit product and create product
     if (productIndex !== null){
         let editProduct = listProducts[productIndex];;
-
         editProduct.img = document.getElementById("photo-product").value;
         editProduct.name = document.getElementById('product-name').value;
         editProduct.description = document.getElementById('descriptions').value;
@@ -199,15 +200,11 @@ function onCreate() {
         }else{
             listProducts.push(newProduct);
         }
-
-
-
-        // console.log(newProduct.name)
     }
-    // if(newProduct.value)
-    // 2- Save question
+
+    // Save product
     saveProducts();
-    // 3 - Update the view
+    // Update the view
     createProduct();
 };
 
@@ -218,7 +215,7 @@ function clearProduct(){
     document.getElementById('descriptions').value  = "";
     document.getElementById('prices').value  = "";
 };
-
+// main
+createProduct();
 saveProducts();
 loadProducts();
-createProduct();

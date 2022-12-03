@@ -13,19 +13,19 @@
         <nav>
             <div class="nav-letf">
                 <ul>
-                    <a href="../../sellWebsite.html"><img src="../../img/logo.png" width="300px"></a>
+                    <a href="#"><img src="../../img/logo.png" width="300px"></a>
                 </ul>
             </div>
-            <div class="nav-right">
+            <!-- <div class="nav-right">
                 <ul>
-                    <li><a href="../customer/customer.html">Customer</a></li>
-                    <li><a class="active" href="seller.html">Seller</a></li>
+                    <li><img src="../../img/logo.png" width="300px"></li>
+                    <li><img src="../../img/logo.png" width="300px"></li>
                 </ul>
-            </div>
+            </div> -->
         </nav>
 
         <h1 class="title">SELL YOUR PRODUCT HERE</h1>  
-        <button class="creatBtn" onclick="addBtn()">Creat </button>
+        <button class="creatBtn" onclick="addBtn()">Create </button>
         <table id="my-table">   
             <thead class="header">
                 <tr>
@@ -67,8 +67,6 @@
                     <td id="description">jkj</td>
                     <td id="price">jkjkjk</td>
                     <td id="actions">
-                        button = e
-                        btn d
                     </td>
                 </tr>
              -->
@@ -81,7 +79,7 @@
         </div>
         <div id = "form-dialog" style="display: none" >
             <dialog open>
-                <header>Create new question</header>
+                <h2>Create new product</h2>
                 <section>
                     <div class = "input-form">
 
@@ -93,13 +91,13 @@
 
                         <label for = "descriptions">Description</label>
                         <input type = "text" id="descriptions">
-
+                        <label for = "currency">currency</label>
+                        <input type = "number" id="currency">
+                        
                         <label for = "prices">Price</label>
                         <input type = "number" id="prices">
-<!-- 
-                        <label for = "descriptions">currency</label>
-                        <input type = "number" id="descriptions"> -->
-                    <!-- </di> -->
+
+
                 </section>
                 <menu>
                     <button onclick="onCancel()">Cancel</button>
@@ -107,7 +105,6 @@
                 </menu>
             </dialog>
         </div>
-
     </div>
 </body>
 <script src="seller.js" ></script>

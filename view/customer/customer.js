@@ -36,9 +36,9 @@ function creatProduct(){
         p.id = 'name';
         p.textContent = listProduct.name;
 
-        let p1 = document.createElement('p');
-        p1.id = 'description';
-        p1.textContent = listProduct.description;
+        // let p1 = document.createElement('p');
+        // p1.id = 'description';
+        // p1.textContent = listProduct.description;
 
         let p2 = document.createElement('p');
         p2.id = 'price';
@@ -56,7 +56,7 @@ function creatProduct(){
         
         div2.appendChild(div1);
         div2.appendChild(p);
-        div2.appendChild(p1);
+        // div2.appendChild(p1);
         div2.appendChild(p2);
         div2.appendChild(btnBuy);
         dom_list_product .appendChild(div2);

@@ -29,7 +29,7 @@ let carts = [];
 
 //     },
 // ];
-function saveCart() { 
+function saveCart() {
     localStorage.setItem("carts", JSON.stringify(carts));
 }
 function loadCart() {
@@ -40,10 +40,10 @@ function loadCart() {
 };
 
 // 
-function displayCart(){
+function displayCart() {
     loadCart()
-    for(let index = 0; index< carts.length; index++){
-        console.log(index)
+    for (let index = 0; index < carts.length; index++) {
+        // console.log(index)
         // creat div and class img-product-buy
         let img_product_buy = document.createElement('div');
         img_product_buy.setAttribute('class', 'img-product-buy');
@@ -52,7 +52,7 @@ function displayCart(){
         photo_buy.setAttribute('id', "photo-buy");
         photo_buy.src = carts[index].img;
         img_product_buy.appendChild(photo_buy)
-         // creat div and class price-description
+        // creat div and class price-description
         let price_decription = document.createElement('div');
         price_decription.setAttribute('class', 'price-description');
         // create p and id name-buy
@@ -73,20 +73,22 @@ function displayCart(){
         // creat p and class input-delete
         let input_delete = document.createElement('div');
         input_delete.setAttribute('class', 'input-delete');
-        
+
         // // create input and id input-number
-        let  input = document.createElement("input");
-        input.type = "input-number";
+        let input = document.createElement("input");
+        input.type = "number";
         input.value = 1;
         input.id = "input-number";
+        input.addEventListener('keyup', renderSubTotal)
         input_delete.appendChild(input)
-         // // create img and id img-delet
-        let img_delet = document.createElement('img');
-        img_delet.setAttribute('id', "img-delet");
-        img_delet.src = '../../img/trash.png'
-        input_delete.appendChild(img_delet)
-        img_delet.addEventListener('click', removeCart)
-          // // create div and class total-btn-buy
+
+        // // create img and id img-delet
+        // let img_delet = document.createElement('img');
+        // img_delet.setAttribute('id', "img-delet");
+        // img_delet.src = '../../img/trash.png'
+        // input_delete.appendChild(img_delet)
+
+        // // create div and class total-btn-buy
         let total_btn_buy = document.createElement('div')
         total_btn_buy.setAttribute('class', 'total-btn-buy')
         // create h2 and id total
@@ -96,46 +98,82 @@ function displayCart(){
         total_btn_buy.appendChild(h2)
         // create button and id btn-buy-now
         let btnBuy = document.createElement('button');
-        btnBuy.setAttribute('id', 'btn-buy-now');
-        btnBuy.textContent = 'buy now';
+        btnBuy.setAttribute('id', 'btn-delete');
+        btnBuy.textContent = 'delete';
+        btnBuy.addEventListener('click', removeCart)
         total_btn_buy.appendChild(btnBuy)
-         // create div and class card-buy
+
+
+        // create div and class card-buy
         let card_buy = document.createElement('div')
-        card_buy.setAttribute('class', 'card-buy' );
+        card_buy.setAttribute('class', 'card-buy');
         card_buy.id = index;
-        // console.log(card_buy)
-        // card_buy.textContent = index + 1;
-        // card_buy.setAttribute("index", index)
         //appendChild input-delet to price-decription 
         price_decription.appendChild(input_delete)
         // append  img_product_buy and price_decription and total_btn_buy to card-buy
         card_buy.appendChild(img_product_buy)
         card_buy.appendChild(price_decription)
         card_buy.appendChild(total_btn_buy)
+
         // appenChild card-buy to dom-product-buy
         dom_product_buy.appendChild(card_buy);
 
-            
     };
+    // let price = document.querySelector('#price-buy')
+    // console.log(price)
 };
+// loop create card total
+for (let index = 0; index < 1; index++) {
+    loadCart()
+    let div_card_total = document.createElement('div')
+    div_card_total.className = 'card-total'
 
-function removeCart(event){
+    let div_total = document.createElement('div')
+    div_total.className = 'total'
+    div_total.textContent = 'sub total: ' + carts[index].price + "$"
+    div_card_total.appendChild(div_total)
+
+    let btn_buy_now = document.createElement('button')
+    btn_buy_now.className = 'buy-now'
+    btn_buy_now.textContent = 'buy-now'
+    div_card_total.appendChild(btn_buy_now)
+    dom_container.appendChild(div_card_total)
+}
+
+function renderSubTotal(event) {
+    let total = 0;
+    let indexCart = event.target.parentElement.parentElement.parentElement.id
+    let index_price = document.querySelectorAll('#total')[indexCart]
+    let input_number = document.querySelectorAll("#input-number");
+    input_number = (input_number[indexCart].value);
+    input_number = parseInt(input_number)
+    price = carts[indexCart].price
+    sub_total = price * input_number
+    index_price.textContent =   sub_total  + "$"
+    
+    total += price * input_number
+    console.log(total)
+    
+
+}
+
+function removeCart(event) {
     let indexCart = event.target.parentElement.parentElement.parentElement.id
 
     carts.splice(indexCart, 1)
-    
+
     saveCart()
-    
+
     displayCart()
-    
+
 }
 
-function countMoney(){
-  
-    // console.log(document.querySelector('#input'))
+// function renderSubTotal(){
 
-    // displayCart()
-}
+// console.log(document.querySelector('#input'))
+
+// displayCart()
+// }
 
 // }
 // for product of listProduct{
@@ -150,7 +188,7 @@ function countMoney(){
 // }
 
 loadCart()
-saveCart() 
+saveCart()
 
 displayCart();
 

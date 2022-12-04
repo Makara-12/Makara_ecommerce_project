@@ -6,31 +6,31 @@ const table = document.querySelector('#my-table');
 const dom_btn_save_create = document.querySelector('#createEditButton');
 
 
-let listProducts = [];
-// let listProducts = [
-//     {
-//         name: "giovanni",
-//         description: "red",
-//         price: "22",
-//         img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCPDuKFpuuOoVQnKk3WwXLIzBuQll3EfoeKRlpMg59gw&s'
+// let listProducts = [];
+let listProducts = [
+    {
+        name: "giovanni",
+        description: "red",
+        price: "22",
+        img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCPDuKFpuuOoVQnKk3WwXLIzBuQll3EfoeKRlpMg59gw&s'
 
-//     },
-//     {
-//         name: "shirt",
-//         description: "red",
-//         price: 23,
-//         img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbDi38s7ZGd2zo2pyg7RRy_VADe9qRB2611SMxsWcTJ3nTRaMHaaWvUzqf-1puZn-xSLU&usqp=CAU'
+    },
+    {
+        name: "shirt",
+        description: "red",
+        price: 23,
+        img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbDi38s7ZGd2zo2pyg7RRy_VADe9qRB2611SMxsWcTJ3nTRaMHaaWvUzqf-1puZn-xSLU&usqp=CAU'
 
 
-//     },
-//     {
-//         name: "dress",
-//         description: "red",
-//         price: "24",
-//         img:'https://cf.shopee.ph/file/6e8a211a042b838768da1290ce5d380f'
+    },
+    {
+        name: "dress",
+        description: "red",
+        price: "24",
+        img:'https://cf.shopee.ph/file/6e8a211a042b838768da1290ce5d380f'
 
-//     },
-// ];
+    },
+];
 
 // show and hide element
 function show(element){

@@ -1,17 +1,12 @@
 // get data
-let demo_diload = document.querySelector('#form-dialog');
-// let sing_in = document.querySelector('.sell');
-let demo_btn_create = document.querySelector('.creatBtn')
-let table = document.querySelector('#my-table');
-let dom_btn_save_create = document.querySelector('#createEditButton');
+const demo_diload = document.querySelector('#form-dialog');
+let creat_product_edit= document.querySelector('#creat-product-edit');
+const demo_btn_create = document.querySelector('.creatBtn')
+const table = document.querySelector('#my-table');
+const dom_btn_save_create = document.querySelector('#createEditButton');
 
-// let dom_photo_product = document.getElementById('photo-product');
-// let dom_product_name = document.getElementById('product-name');
-// let dom_description = document.getElementById('descriptions');
-// let dom_price = document.getElementById('prices');
-// console.log(dom_price)
 
-let listProducts = []
+let listProducts = [];
 // let listProducts = [
 //     {
 //         name: "giovanni",
@@ -104,18 +99,20 @@ function createProduct(){
             td6.appendChild(img)
            
          // create button delet and button edite 
-            let btn1 = document.createElement("button");
-            btn1.setAttribute("id","btn1");
-            btn1.addEventListener('click', editeProduct);
-            btn1.textContent = 'Edit';
+            let img_edit = document.createElement('img')
+            img_edit.id = "img-edit"
+            img_edit .src = '../../img/edit.svg'
+            td5.appendChild( img_edit )
+            img_edit.addEventListener('click', editeProduct);
+
+            let img_delete = document.createElement('img')
+            img_delete .id = "img-delete"
+            img_delete.src = '../../img/trash.png'
+            td5.appendChild(img_delete)
+            img_delete.addEventListener('click', removeTable);
     
-            let btn2 = document.createElement("button");
-            btn2.setAttribute("id","btn2");
-            btn2.addEventListener('click', removeTable);
-            btn2.textContent = 'Delete';
-    
-            td5.appendChild(btn1);
-            td5.appendChild(btn2);
+            td5.appendChild(img_edit);
+            td5.appendChild(img_delete);
             
             let tr = document.createElement('tr');
             tr.id = index;
@@ -147,13 +144,13 @@ function editeProduct(event) {
  
     // Show the dialog
     dom_btn_save_create.textContent = "EDIT";
+    creat_product_edit.textContent = "Edite new product";
     saveProducts();
 }
-
+// ________________________remove table___________________
 function removeTable(event) {
     //  Get index
     let index = event.target.parentElement.parentElement.children[0].getAttribute('index');
-
     // Remove product
     listProducts.splice(index, 1);
 
@@ -163,8 +160,7 @@ function removeTable(event) {
     createProduct();
 };
 
-
-// click create
+// _______________________click create_____________________
 function addBtn(){
     // show diload
     show(demo_diload);
@@ -172,6 +168,8 @@ function addBtn(){
     clearProduct();
     productIndex = null;
     dom_btn_save_create.textContent = "Save";
+    creat_product_edit.textContent = "Create new product";
+    
 };
 
 function onCancel(e) {
@@ -179,7 +177,7 @@ function onCancel(e) {
     hide(demo_diload);
 };
 
-// creat product
+// ________________________creat product_____________________
 function onCreate() {
     hide(demo_diload);
     // dedit product and create product

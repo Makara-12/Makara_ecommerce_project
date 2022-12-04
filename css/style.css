@@ -2,8 +2,6 @@ body{
     margin: 0;
     padding: 0;
     height: 100hv;
-    display: flex;
-    justify-content: space-between;
     font-family: sans-serif;
     color: rgb(0, 0, 0);
     background-color: rgb(243, 243, 243);
@@ -13,29 +11,29 @@ body{
     display: flex;
     flex-direction: column;
 }
-/* nav bar */
+/* __________________________________nav bar__________________ */
 nav{
     position: sticky;
     top: 0;
     display: flex;
     flex: 3;
     justify-content: space-between;
-    /* align-items: center; */
-    /* text-transform: capitalize; */
     background-color: rgb(1, 116, 116);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; 
- 
 }
 
 .nav-letf{
     flex: 1;
 }
+
 .nav-center{
-    flex: 1;
+    flex: 2;
+    margin-left: 20px;
 }
+
 .nav-right{
-    /* display: flex; */
     flex: 1;
+    margin-top: 20px;
 }
 
 .nav-right ul li{
@@ -49,27 +47,33 @@ nav{
     margin-left: 30px;
     font-size: 22px;
 }
-.nav-right, #customer{
-    /* margin-left: 200px; */
-}
-form{
+
+form, #search{
+    /* outline: none; */
+    margin-top: 15px;
+    padding: 10px;
     display: flex;
+    width: 90%;
+    margin-left: 40px;
+    border-radius: 20px;
 }
-#search-btn, i{
-    margin-top: 20px;   
-}
+
 
 .nav-right img{
     width: 30px;
-    margin-left: 200px;
+    margin-left: 30px;
 }
 
+.nav-letf img{
+    width: 35%;
+}
 
-/* sell style */
+/* _______________________________sell style____________________ */
 .title{
     text-align: center;
     margin-top: 50px;
 }
+/* ________________________table style__________________________ */
 #my-table{
     background: rgb(191, 201, 199);
     font-family: arial, sans-serif;
@@ -84,7 +88,6 @@ th, td{
     border: 1px solid rgb(152, 152, 152);
     text-align: center;
     padding: 10px;
-
 }
 
 table {
@@ -106,21 +109,10 @@ img, #cloth{
     margin-right: 10px;
 }
 
-#btn1{
-    background: blue;
+#img-edit, #img-delete{
+   width: 44px;
     padding: 15px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-}
-
-#btn2{
-    background-color: red;
-    color: white;
-    margin-left: 20px;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
+    cursor: pointer;
 }
 
 .creatBtn{
@@ -134,13 +126,12 @@ img, #cloth{
     background-color: rgb(5, 90, 83);
     color: white;
 }
-/* dialog */
+/* _________________________________dialog style_____________________ */
 dialog {
     position: fixed;
-    top: 10vh;
+    top: 20vh;
     left: 30%;
     width: 30%;
-    /* z-index: 500; */
     border-radius: 12px;
     border: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -195,8 +186,18 @@ button:active {
 .button:hover {
     border: 1px solid rgb(15, 15, 15);
     background-color: rgb(233, 233, 233);
-  }
+}
 
+/*  ______________________________________customer style__________________ */
+.card-detail{
+    display: flex;
+}
+.photo-detail img{
+    margin-top: 20px;
+    background: #000;
+    height: 30vh;
+
+}
 .text-job p {
     font-size: 50px;
     text-align: center;
@@ -216,6 +217,7 @@ button:active {
     width: 22%;
     border-radius: 5px;
 }
+
 .img-product img{
   
     height: 42vh; 
@@ -224,29 +226,31 @@ button:active {
 
 }
 .card-product:hover{
-    box-shadow: rgba(107, 107, 107, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #description, #name, #price{
     margin-left: 10px;
     margin-top: -0px;
 }
+#price{
+    font-size: 20px;
+}
 .btn-buy{
-    /* background-color: rgb(1, 116, 116); */
+
     border-radius: 5px;
     width: 220px; 
     padding: 10px; 
     margin-top: -10px;
     margin-left: 23px;
-
     color: white;  
 }
 
 /* add card buy product */
+
 .product-buy{
     display: flex;
     flex-wrap: wrap;
-    /* width: 97%;  */
     margin: 20px;
 }
 
@@ -264,6 +268,9 @@ button:active {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
+/* .card-buy:hover{
+    width: 20%;
+} */
 .img-product-buy{
     padding: 20px;
 }
@@ -278,12 +285,6 @@ button:active {
 #description-buy {
     word-break: break-all;
     width: 60%;
-    /* background: rgb(180, 178, 178); */
-}
-.total-btn-buy{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
 }
 
@@ -292,9 +293,11 @@ button:active {
     height: 13px;
     margin-top: 10px;
 }
+
 #img-delet {
     width: 30px;
 }
+
 #btn-delete{ 
     background-color: rgb(1, 116, 116);
     border-radius: 4px;
@@ -303,13 +306,18 @@ button:active {
     border: none;
     padding: 10px; 
     margin-right: 30px;
-    margin-bottom: 10px; 
+    margin-top: 100px;
     color: white;  
 }
 #total, h2{
     margin-left: 30px;
 }
-
+#icon-star, i{
+    color: rgba(241, 191, 10, 0.986);
+}
+.call, i{
+    color: aliceblue;
+}
 .card-total{
     position: sticky;
     bottom: 0;
@@ -337,3 +345,32 @@ button:active {
     text-align: center;
    
 }
+/* ____________________________________footer style__________________ */
+footer{
+    background-color: rgb(5, 90, 83);
+    color: rgb(232, 227, 227);
+    display: flex;
+    margin-top: 68px;
+    padding: 20px;
+   
+}
+.logo-buttom{
+
+    margin-left: 20px;
+    width: 25%;
+    
+}
+.logo-buttom img{
+    width: 13%;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.footer-right{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    
+}
+

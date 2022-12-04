@@ -214,6 +214,6 @@ function clearProduct(){
     document.getElementById('prices').value  = "";
 };
 // main
-saveProducts();
+// saveProducts();
 createProduct();
 loadProducts();

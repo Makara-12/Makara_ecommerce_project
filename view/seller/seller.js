@@ -9,27 +9,34 @@ const dom_btn_save_create = document.querySelector('#createEditButton');
 // let listProducts = [];
 let listProducts = [
     {
-        name: "giovanni",
-        description: "red",
+        name: "Pencil heel sandals designs for girls",
+        description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
         price: "22",
-        img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCPDuKFpuuOoVQnKk3WwXLIzBuQll3EfoeKRlpMg59gw&s'
+        img:'https://i.pinimg.com/736x/c1/c5/ff/c1c5ff10754dee40d0b5fa150fba261b.jpg'
 
     },
     {
-        name: "shirt",
-        description: "red",
+        name: "Pencil heel sandals designs for girls",
+        description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
         price: 23,
-        img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbDi38s7ZGd2zo2pyg7RRy_VADe9qRB2611SMxsWcTJ3nTRaMHaaWvUzqf-1puZn-xSLU&usqp=CAU'
+        img:'https://i.pinimg.com/736x/a7/56/6e/a7566e940ebf8ad097e8b238472fa0c0.jpg'
 
 
     },
     {
-        name: "dress",
-        description: "red",
+        name: "Pencil heel sandals designs for girls",
+        description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
         price: "24",
-        img:'https://cf.shopee.ph/file/6e8a211a042b838768da1290ce5d380f'
+        img:'https://i.pinimg.com/736x/95/e0/44/95e0441398e3aaa1e5755a0ba81e5142--high-heels-sandals-sexy-heels.jpg'
 
     },
+    {
+        name: "Pencil heel sandals designs for girls",
+        description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
+        price: "24",
+        img:'https://i.pinimg.com/736x/5b/df/c7/5bdfc703902e89b5f76f19066479837a.jpg'
+
+    }
 ];
 
 // show and hide element

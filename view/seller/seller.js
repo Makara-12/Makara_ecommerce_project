@@ -6,38 +6,38 @@ const table = document.querySelector('#my-table');
 const dom_btn_save_create = document.querySelector('#createEditButton');
 
 
-// let listProducts = [];
-let listProducts = [
-    {
-        name: "Pencil heel sandals designs for girls",
-        description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
-        price: "22",
-        img:'https://i.pinimg.com/736x/c1/c5/ff/c1c5ff10754dee40d0b5fa150fba261b.jpg'
+let listProducts = [];
+// let listProducts = [
+//     {
+//         name: "Pencil heel sandals designs for girls",
+//         description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
+//         price: "22",
+//         img:'https://i.pinimg.com/736x/c1/c5/ff/c1c5ff10754dee40d0b5fa150fba261b.jpg'
 
-    },
-    {
-        name: "Pencil heel sandals designs for girls",
-        description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
-        price: 23,
-        img:'https://i.pinimg.com/736x/a7/56/6e/a7566e940ebf8ad097e8b238472fa0c0.jpg'
+//     },
+//     {
+//         name: "Pencil heel sandals designs for girls",
+//         description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
+//         price: 23,
+//         img:'https://i.pinimg.com/736x/a7/56/6e/a7566e940ebf8ad097e8b238472fa0c0.jpg'
 
 
-    },
-    {
-        name: "Pencil heel sandals designs for girls",
-        description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
-        price: "24",
-        img:'https://i.pinimg.com/736x/95/e0/44/95e0441398e3aaa1e5755a0ba81e5142--high-heels-sandals-sexy-heels.jpg'
+//     },
+//     {
+//         name: "Pencil heel sandals designs for girls",
+//         description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
+//         price: "24",
+//         img:'https://i.pinimg.com/736x/95/e0/44/95e0441398e3aaa1e5755a0ba81e5142--high-heels-sandals-sexy-heels.jpg'
 
-    },
-    {
-        name: "Pencil heel sandals designs for girls",
-        description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
-        price: "24",
-        img:'https://i.pinimg.com/736x/5b/df/c7/5bdfc703902e89b5f76f19066479837a.jpg'
+//     },
+//     {
+//         name: "Pencil heel sandals designs for girls",
+//         description: "pencil heel sandals images, pencil heel shoes with price, pencil heel sandals with price,",
+//         price: "24",
+//         img:'https://i.pinimg.com/736x/5b/df/c7/5bdfc703902e89b5f76f19066479837a.jpg'
 
-    }
-];
+//     }
+// ];
 
 // show and hide element
 function show(element){
@@ -206,7 +206,6 @@ function onCreate() {
             listProducts.push(newProduct);
         }
     }
-
     // Save product
     saveProducts();
     // Update the view

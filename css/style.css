@@ -68,6 +68,11 @@ form, #search{
     width: 35%;
 }
 
+.banner img{
+    width: 100%;
+    height: 70vh;
+}
+
 /* _______________________________sell style____________________ */
 .title{
     text-align: center;
